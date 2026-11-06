@@ -22,13 +22,13 @@ pane_list = ["black_glass_pane_straight",
 def do_pane_model(color, modid):
   for pane in pane_list:
     with open(source + pane + ".json", 'r') as file:
-      filejson = file.read().replace("minecraft:black_stained_glass_pane", f"MODID:{color}_stained_glass_pane").replace("minecraft:block/mt-ct/black_stained_glass", f"MODID:block/{color}_stained_glass").replace("minecraft:block/black_stained_glass_pane_top", f"MODID:block/{color}_stained_glass_pane_top")
+      filejson = file.read().replace("minecraft:black_stained_glass_pane", f"{modid}:{color}_stained_glass_pane").replace("minecraft:block/mt-ct/black_stained_glass", f"{modid}:block/{color}_stained_glass").replace("minecraft:block/black_stained_glass_pane_top", f"{modid}:block/{color}_stained_glass_pane_top")
       newpane = pane.replace("black", color)
       with open(MODID_savepath(modid) + f"/models/block/{newpane}.json", 'w') as newfile:
         newfile.write(filejson)
 
 def do_blockstates(color, modid):
-  with open(MODID_savepath(modid) + f"/blockstates/{color}_stained_glass_pane.json", 'w') as blockstatefile:
+  with open(MODID_savepath(modid) + f"/blockstates/{color}_glass_pane.json", 'w') as blockstatefile:
     blockstatefile.write(blockstate(color, modid))
 
 def blockstate(color, modid):
@@ -37,7 +37,7 @@ def blockstate(color, modid):
   "multipart": [
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_side_north"
+        "model": "???:block/@@@_glass_pane_side_north"
       },
       "when": {
         "north": "true"
@@ -45,7 +45,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_side_east",
+        "model": "???:block/@@@_glass_pane_side_east",
         "y": 90
       },
       "when": {
@@ -54,7 +54,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_side_south",
+        "model": "???:block/@@@_glass_pane_side_south",
         "y": 180
       },
       "when": {
@@ -63,7 +63,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_side_west",
+        "model": "???:block/@@@_glass_pane_side_west",
         "y": 270
       },
       "when": {
@@ -72,7 +72,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_noside_north"
+        "model": "???:block/@@@_glass_pane_noside_north"
       },
       "when": {
         "east": "true",
@@ -82,7 +82,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_noside_east",
+        "model": "???:block/@@@_glass_pane_noside_east",
         "y": 90
       },
       "when": {
@@ -93,7 +93,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_noside_south",
+        "model": "???:block/@@@_glass_pane_noside_south",
         "y": 180
       },
       "when": {
@@ -104,7 +104,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_noside_west",
+        "model": "???:block/@@@_glass_pane_noside_west",
         "y": 270
       },
       "when": {
@@ -115,7 +115,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_straight"
+        "model": "???:block/@@@_glass_pane_straight"
       },
       "when": {
         "north": "true",
@@ -124,7 +124,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_straight",
+        "model": "???:block/@@@_glass_pane_straight",
         "y": 90
       },
       "when": {
@@ -134,7 +134,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_straight"
+        "model": "???:block/@@@_glass_pane_straight"
       },
       "when": {
         "OR": [
@@ -153,7 +153,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_straight",
+        "model": "???:block/@@@_glass_pane_straight",
         "y": 90
       },
       "when": {
@@ -174,7 +174,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_corner"
+        "model": "???:block/@@@_glass_pane_corner"
       },
       "when": {
         "north": "true",
@@ -185,7 +185,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_corner",
+        "model": "???:block/@@@_glass_pane_corner",
         "y": 90
       },
       "when": {
@@ -197,7 +197,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_corner",
+        "model": "???:block/@@@_glass_pane_corner",
         "y": 180
       },
       "when": {
@@ -209,7 +209,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_corner",
+        "model": "???:block/@@@_glass_pane_corner",
         "y": 270
       },
       "when": {
@@ -221,7 +221,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_end"
+        "model": "???:block/@@@_glass_pane_end"
       },
       "when": {
         "north": "true",
@@ -232,7 +232,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_end",
+        "model": "???:block/@@@_glass_pane_end",
         "y": 90
       },
       "when": {
@@ -244,7 +244,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_end",
+        "model": "???:block/@@@_glass_pane_end",
         "y": 180
       },
       "when": {
@@ -256,7 +256,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_end",
+        "model": "???:block/@@@_glass_pane_end",
         "y": 270
       },
       "when": {
@@ -268,7 +268,7 @@ def blockstate(color, modid):
     },
     {
       "apply": {
-        "model": "MODID:block/@@@_glass_pane_post"
+        "model": "???:block/@@@_glass_pane_post"
       },
       "when": {
         "north": "false",
@@ -279,9 +279,9 @@ def blockstate(color, modid):
     }
   ]
 } 
-""".replace("@@@", color).replace("MODID", modid)
+""".replace("@@@", color).replace("???", modid)
 
-def do_model(color):
+def do_model(color, modid):
   return """{
   "loader": "fusion:model",
   "type": "connecting",
@@ -295,7 +295,7 @@ def do_model(color):
     "all": "MODID:block/@@@_stained_glass"
   }
 }
-""".replace("@@@", color)
+""".replace("@@@", color).replace("MODID", modid)
 
 def do_model_in_file(color, path=f"{MODID_savepath}/models/block/"):
   with open(path + color + "_stained_glass.json", 'w') as file:
