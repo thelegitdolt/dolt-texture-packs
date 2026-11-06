@@ -22,7 +22,7 @@ pane_list = ["black_glass_pane_straight",
 def do_pane_model(color, modid):
   for pane in pane_list:
     with open(source + pane + ".json", 'r') as file:
-      filejson = file.read().replace("minecraft:black_stained_glass_pane", f"{modid}:{color}_stained_glass_pane").replace("minecraft:block/mt-ct/black_stained_glass", f"{modid}:block/{color}_stained_glass").replace("minecraft:block/black_stained_glass_pane_top", f"{modid}:block/{color}_stained_glass_pane_top")
+      filejson = file.read().replace("minecraft:black_stained_glass_pane", f"{modid}:{color}_glass_pane").replace("minecraft:block/mt-ct/black_stained_glass", f"{modid}:block/{color}_glass").replace("minecraft:block/black_stained_glass_pane_top", f"{modid}:block/{color}_glass_pane_top")
       newpane = pane.replace("black", color)
       with open(MODID_savepath(modid) + f"/models/block/{newpane}.json", 'w') as newfile:
         newfile.write(filejson)
@@ -292,13 +292,13 @@ def do_model(color, modid):
   },
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "MODID:block/@@@_stained_glass"
+    "all": "MODID:block/@@@_glass"
   }
 }
 """.replace("@@@", color).replace("MODID", modid)
 
 def do_model_in_file(color, path=f"{MODID_savepath}/models/block/"):
-  with open(path + color + "_stained_glass.json", 'w') as file:
+  with open(path + color + "_glass.json", 'w') as file:
     file.write(do_model(color))
 
 

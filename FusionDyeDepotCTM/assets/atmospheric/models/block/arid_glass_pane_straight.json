@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/mt-ct/template_pane_straight",
+  "textures": {
+    "pane": "atmospheric:block/arid_glass",
+    "edge": "atmospheric:block/arid_glass_pane_top"
+  }
+}
+
